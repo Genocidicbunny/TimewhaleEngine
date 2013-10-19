@@ -1,0 +1,5 @@
+# Test Manifest
+
+#0 TEXTURE Resources/FailWhaleSprite.png fail_sprite
+0 AUDIO Resources/MilitariumMenuScreen01.mp3 menu
+0 AUDIO Resources/hey.mp3 hey

@@ -1,0 +1,66 @@
+# Test Manifest File
+# hashes are comments!
+
+0 TEXTURE Resources/Anim_Militarium_Idle.png Anim_Militarium_Idle
+#0 OTHER Resources/FILETEST.txt FILETEST 
+0 TEXTURE Resources/hex.png hex
+0 AUDIO Resources/hey.mp3 hey
+#0 AUDIO Resources/Crowd-Boo-Small.mp3 boo
+#0 TEXTURE Resources/FailWhale.png FailWhale
+0 TEXTURE Resources/Base_Down_Attacked_Blue.png Base_Down_Attacked_Blue
+0 TEXTURE Resources/Base_Down_Attacked_Red.png Base_Down_Attacked_Red
+0 TEXTURE Resources/Base_Down_Blue.png Base_Down_Blue
+0 TEXTURE Resources/Base_Down_Building_Blue.png Base_Down_Building_Blue
+0 TEXTURE Resources/Base_Down_Building_Red.png Base_Down_Building_Red
+0 TEXTURE Resources/Base_Down_Red.png Base_Down_Red
+0 TEXTURE Resources/Base_Up_Building_Blue.png Base_Up_Building_Blue
+0 TEXTURE Resources/Base_Up_Blue.png Base_Up_Blue
+0 TEXTURE Resources/Base_Up_Building_Red.png Base_Up_Building_Red
+0 TEXTURE Resources/Base_Up_Red.png Base_Up_Red
+0 TEXTURE Resources/BaseBuilding.png BaseBuilding
+0 TEXTURE Resources/builder2.png builder2
+
+0 TEXTURE Resources/Crystal2.png Crystal2
+0 TEXTURE Resources/CrystalOwned.png CrystalOwned
+0 TEXTURE Resources/CrystalOwned1.png CrystalOwned1
+0 TEXTURE Resources/electric.png electric
+0 TEXTURE Resources/CrystalOwned2.png CrystalOwned2
+0 TEXTURE Resources/depowered1.png depowered1
+0 TEXTURE Resources/depowered2.png depowered2
+0 TEXTURE Resources/electric2.png electric2
+0 TEXTURE Resources/fingerTracker.png fingerTracker
+0 TEXTURE Resources/FingerTrackerTest.png FingerTrackerTest
+0 TEXTURE Resources/forest1.png forest1
+0 TEXTURE Resources/GrassSeamless.png GrassSeamless
+0 TEXTURE Resources/Hex_Plain.png Hex_Plain
+0 OTHER Resources/cursor.rml cursor.rml
+0 OTHER Resources/Demo.rml UI_Demo
+0 OTHER Resources/window.rml window.rml
+0 OTHER Resources/invader.rcss invader.rcss
+0 OTHER Resources/rkt.rcss rkt.rcss
+0 TEXTURE Resources/invader.png invader.png
+0 OTHER Resources/Delicious-Roman.otf Delicious-Roman.otf
+
+# TEXTURE This is still a comment!!!!
+# But now we are in scope one!
+
+1 TEXTURE Resources/Building_Influence_Blue.png Building_Influence_Blue
+1 TEXTURE Resources/Crystal.png Crystal
+1 TEXTURE Resources/Influence_Depowered_Blue.png
+1 TEXTURE Resources/Influence_Depowered_Red.png
+1 TEXTURE Resources/Influence_Down_Attacked_Blue.png
+1 TEXTURE Resources/Influence_Down_Attacked_Red.png
+1 TEXTURE Resources/Influence_Down_Blue_ReadyToAttack.png
+1 TEXTURE Resources/Influence_Down_Blue.png
+1 TEXTURE Resources/Influence_Down_Electric_Blue.png
+1 TEXTURE Resources/Influence_Down_Electric_Red.png
+1 TEXTURE Resources/Influence_Down_Red.png
+1 TEXTURE Resources/Influence_Up_Blue.png
+1 TEXTURE Resources/Influence_Up_Electric_Blue.png
+1 TEXTURE Resources/Influence_Up_Electric_Red.png
+1 TEXTURE Resources/Influence_Up_Red.png
+
+# so many comments
+#whaleproblems
+
+

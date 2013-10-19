@@ -1,0 +1,47 @@
+<exporter version="1.0">
+	<!-- identifier-->
+	<name>basic_exporter</name>
+	
+	<!-- display name of the exporter for the combo box -->
+	<displayName>Basic Exporter</displayName>
+	
+	<!-- Description of the exporter -->
+	<description>This is the basic test exporter for Timewhale</description>
+	
+	<!-- exporter version -->
+	<version>1.0</version>
+	
+	<files>
+		<file>
+			<!-- name of the file variable -->
+			<name>maintext</name>
+			
+			<!-- human readable name -->
+			<displayName>MySpriteSheet</displayName>
+			
+			<!-- file extension for the file -->
+			<fileExtension>txt</fileExtension>
+			
+			<!-- name of the template file -->
+			<template>basic_exporter.txt</template>
+		</file>
+	</files>
+	
+	<!-- target framework supports trimming -->
+	<supportsTrimming>no</supportsTrimming>
+	
+	<!-- target framework supports rotated sprites -->
+	<supportsRotation>no</supportRotation>
+	
+	<!-- rotated sprites direction (cw/ccw)-->
+	<rotationDirection>cw</rotationDirection>
+	
+	<!-- supports npot sizes -->
+	<supportsNPOT>yes</supportsNPOT>
+	
+	<!-- supports filename stripping (remove  etc) -->
+	<supportsTrimSpriteNames>yes</supportsTrimSpriteNames>
+	
+	<!-- supports texture subpath -->
+	<supportsTextureSubPath>yes</supportsTextureSubPath>
+</exporter>

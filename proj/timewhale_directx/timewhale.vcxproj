@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\AudioStreamResource.h" />
+    <ClInclude Include="..\..\include\AudioSystem.h" />
+    <ClInclude Include="..\..\include\BasicAudioResource.h" />
+    <ClInclude Include="..\..\include\BinaryFileResource.h" />
+    <ClInclude Include="..\..\include\blub_structs.h" />
+    <ClInclude Include="..\..\include\Camera.h" />
+    <ClInclude Include="..\..\include\ComponentRegistry.h" />
+    <ClInclude Include="..\..\include\CRC32.h" />
+    <ClInclude Include="..\..\include\D3DManager.h" />
+    <ClInclude Include="..\..\include\Dator.h" />
+    <ClInclude Include="..\..\include\DXTexture.h" />
+    <ClInclude Include="..\..\include\ECS.h" />
+    <ClInclude Include="..\..\include\ECSTypes.h" />
+    <ClInclude Include="..\..\include\Engine.h" />
+    <ClInclude Include="..\..\include\Entity.h" />
+    <ClInclude Include="..\..\include\Event.h" />
+    <ClInclude Include="..\..\include\EventInstancer.h" />
+    <ClInclude Include="..\..\include\EventListener.h" />
+    <ClInclude Include="..\..\include\FileStreamResource.h" />
+    <ClInclude Include="..\..\include\FSM.h" />
+    <ClInclude Include="..\..\include\GameObject.h" />
+    <ClInclude Include="..\..\include\hashfunctionsreal.h" />
+    <ClInclude Include="..\..\include\IAsyncLoad.h" />
+    <ClInclude Include="..\..\include\IComponent.h" />
+    <ClInclude Include="..\..\include\IDator.h" />
+    <ClInclude Include="..\..\include\InputManager.h" />
+    <ClInclude Include="..\..\include\InstanceID.h" />
+    <ClInclude Include="..\..\include\IProfilerOutputHandler.h" />
+    <ClInclude Include="..\..\include\IResource.h" />
+    <ClInclude Include="..\..\include\ISystem.h" />
+    <ClInclude Include="..\..\include\LogMessage.h" />
+    <ClInclude Include="..\..\include\NetworkSystem.h" />
+    <ClInclude Include="..\..\include\ObjectPool.h" />
+    <ClInclude Include="..\..\include\OSB.h" />
+    <ClInclude Include="..\..\include\PlatformManager.h" />
+    <ClInclude Include="..\..\include\ProfileLogHandler.h" />
+    <ClInclude Include="..\..\include\ProfileSample.h" />
+    <ClInclude Include="..\..\include\PythonManager.h" />
+    <ClInclude Include="..\..\include\RenderSystem.h" />
+    <ClInclude Include="..\..\include\ResourceManager.h" />
+    <ClInclude Include="..\..\include\ResourceSystem.h" />
+    <ClInclude Include="..\..\include\ResourceUtil.h" />
+    <ClInclude Include="..\..\include\Scene.h" />
+    <ClInclude Include="..\..\include\SceneManager.h" />
+    <ClInclude Include="..\..\include\SceneTable.h" />
+    <ClInclude Include="..\..\include\SettingsManager.h" />
+    <ClInclude Include="..\..\include\Sprite.h" />
+    <ClInclude Include="..\..\include\SpriteComponent.h" />
+    <ClInclude Include="..\..\include\SpriteShader.h" />
+    <ClInclude Include="..\..\include\StringUtils.h" />
+    <ClInclude Include="..\..\include\TextureResource.h" />
+    <ClInclude Include="..\..\include\Timewhale.h" />
+    <ClInclude Include="..\..\include\TimewhaleApi.h" />
+    <ClInclude Include="..\..\include\TransformComponent.h" />
+    <ClInclude Include="..\..\include\TWLogger.h" />
+    <ClInclude Include="..\..\include\TWMemory.h" />
+    <ClInclude Include="..\..\include\UIManager.h" />
+    <ClInclude Include="..\..\include\UIObject.h" />
+    <ClInclude Include="..\..\include\UIShader.h" />
+    <ClInclude Include="..\..\include\WhaleMath.h" />
+    <ClInclude Include="..\..\include\WhaleTimer.h" />
+    <ClInclude Include="..\..\include\WICTextureLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\Win8AutoRotationHook.inc" />
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\CRC32.cpp" />
+    <ClCompile Include="..\..\source\AudioStreamResource.cpp" />
+    <ClCompile Include="..\..\source\AudioSystem.cpp" />
+    <ClCompile Include="..\..\source\BasicAudioResource.cpp" />
+    <ClCompile Include="..\..\source\BinaryFileResource.cpp" />
+    <ClCompile Include="..\..\source\Camera.cpp" />
+    <ClCompile Include="..\..\source\Component.cpp" />
+    <ClCompile Include="..\..\source\D3DManager.cpp" />
+    <ClCompile Include="..\..\source\DXTexture.cpp" />
+    <ClCompile Include="..\..\source\ECSManager.cpp" />
+    <ClCompile Include="..\..\source\Engine.cpp" />
+    <ClCompile Include="..\..\source\Entity.cpp" />
+    <ClCompile Include="..\..\source\FSM.cpp" />
+    <ClCompile Include="..\..\source\GameObject.cpp" />
+    <ClCompile Include="..\..\source\IAsyncLoad.cpp" />
+    <ClCompile Include="..\..\source\InputManager.cpp" />
+    <ClCompile Include="..\..\source\IResource.cpp" />
+    <ClCompile Include="..\..\source\LogMessage.cpp" />
+    <ClCompile Include="..\..\source\NetworkSystem.cpp" />
+    <ClCompile Include="..\..\source\PlatformManager.cpp" />
+    <ClCompile Include="..\..\source\ProfileLogHandler.cpp" />
+    <ClCompile Include="..\..\source\ProfileSample.cpp" />
+    <ClCompile Include="..\..\source\PythonManager.cpp" />
+    <ClCompile Include="..\..\source\RenderSystem.cpp" />
+    <ClCompile Include="..\..\source\ResourceManager.cpp" />
+    <ClCompile Include="..\..\source\ResourceSystem.cpp" />
+    <ClCompile Include="..\..\source\Scene.cpp" />
+    <ClCompile Include="..\..\source\SceneManager.cpp" />
+    <ClCompile Include="..\..\source\SettingsManager.cpp" />
+    <ClCompile Include="..\..\source\Sprite.cpp" />
+    <ClCompile Include="..\..\source\SpriteComponent.cpp" />
+    <ClCompile Include="..\..\source\SpriteShader.cpp" />
+    <ClCompile Include="..\..\source\StringUtils.cpp" />
+    <ClCompile Include="..\..\source\TextureResource.cpp" />
+    <ClCompile Include="..\..\source\Timewhale.cpp" />
+    <ClCompile Include="..\..\source\TransformComponent.cpp" />
+    <ClCompile Include="..\..\source\TWLogger.cpp" />
+    <ClCompile Include="..\..\source\UIManager.cpp" />
+    <ClCompile Include="..\..\source\UIObject.cpp" />
+    <ClCompile Include="..\..\source\UIShader.cpp" />
+    <ClCompile Include="..\..\source\WhaleTimer.cpp" />
+    <ClCompile Include="..\..\source\WICTextureLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\shaders\PixelShader.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SpritePixelShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SpritePixelShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\shaders\RocketPixelShader.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RocketPixelShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RocketPixelShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\shaders\RocketVertexShader.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RocketVertexShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RocketVertexShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\..\shaders\VertexShader.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SpriteVertexShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SpriteVertexShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CF414564-0E9C-4DA2-B361-C4643CFA07D9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>timewhale</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)d</TargetName>
+    <IncludePath>$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib\x86;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\source;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib\x86;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\source;$(SourcePath)</SourcePath>
+    <OutDir>$(SolutionDir)\bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;TIMEWHALE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/DNOMINMAX %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;D3D11.lib;dxgi.lib;D3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;D3D11.lib;dxgi.lib;d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalOptions>/ignore:4006,4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <FxCompile>
+      <ObjectFileOutput>$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;TIMEWHALE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/DNOMINMAX %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;D3D11.lib;dxgi.lib;d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalOptions>/ignore:4006,4221 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,10 @@
+*.suo
+*.sdf
+*.lib
+*.dll
+*.pdb
+*.exe
+*.log
+lib/*
+Debug/*
+Release/*

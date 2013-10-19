@@ -1,0 +1,107 @@
+Implementing LibRocket with Timewhale and SDL
+
+1. Integrate the basics of LibRocket with SDL:
+	See http://forums.librocket.com/viewtopic.php?f=6&t=877 for integrating LibRocket with SDL. May need to tweak since we use our own rendering, not sdl.
+
+2. Write the core interface
+
+	The core system interface is defined by the following:
+	class ROCKETCORE_API SystemInterface : public ReferenceCountable
+	{
+	public:
+		SystemInterface();
+		virtual ~SystemInterface();
+
+		virtual float GetElapsedTime() = 0;
+
+		virtual int TranslateString(String& translated, const String& input);
+
+		virtual void JoinPath(String& translated_path, const String& document_path, const String& path);
+
+		virtual bool LogMessage(Log::Type type, const String& message);
+
+		virtual void Release();
+
+	protected:
+		virtual void OnReferenceDeactivate();
+	};
+
+	We really only need to implement GetElapsedTime which needs to return the time since Timewhale epoch, which is simple enough to implement in a timer (write initialization timestamp to a private member.) The returned value should be the number of seconds
+
+	Implementing LogMessage would also be fairly simple through the logging macros we now have usable (wooo). LibRocket needs the log levels: ASSERT, ERROR, WARNING and INFO. These can be mapped to our own as follows:
+	ASSERT  -> Debug
+	ERROR   -> Error
+	WARNING -> Warn
+	INFO 	-> Info
+
+	Ez.
+
+	Doubtful we will need JoinPath anytime soon (our resource structure doesn't really fit it's purpose, the default will work fine) Translate string takes an input string and can be used to look it up in a string table. Good to implement if we decide to translate Militarium at any point ( I can do Russian)
+
+	Release is called before the interface is destroyed. If we do RAII properly, the destructor (which we will be implementing regardless) will take care of resource cleanup.
+	Although maybe that code should go into Release, just in case LibRocket does funny stuff with the actual object (who knows...)
+
+
+3. Write a file system interface -- RocketFile
+
+	RocketFile will need to support the following: 
+
+	virtual Rocket::Core::FileHandle Open(const Rocket::Core::String& path)
+	virtual void Close(Rocket::Core::FileHandle file)
+	virtual size_t Read(void* buffer, size_t size, Rocket::Core::FileHandle file) 
+	virtual bool Seek(Rocket::Core::FileHandle file, long offset, int origin) 
+	virtual size_t Tell(Rocket::Core::FileHandle file) 
+
+	Open will effectively be a call to create a new instance of RocketFile that it will then use for reading. This function should create a new RocketFile and pass it the provided path. The constructor should call to the resource manager to load the specified file and process the contents. The content processing will be minimal, we will simply store a pointer to the data and set up some internal pointers for providing the rest of the functionality. So really, the actual interface Open function will just create a new RocketFile, wrap it's pointer in Rocket::Core::FileHandle (just cast the pointer, it'll do) LibRocket now effectively owns that region, so if we implement some sort of system-side control of post-processed data, we will need to be careful not to ever release data owned by a RocketFile.
+
+	Close on the other hand, should assume it can steal ownership of the RocketFile wrapped in the provided FileHandle. This means that Close can call delete on the provided RocketFile, which will signal to the resource manager that the data is now unowned (for the previously-mentioned system-side data control) This deallocation will only delete the pointers, we must make sure that RocketFile never deletes anything it points to in regards to system-provided memory.
+
+	Read is simple, this is what those previously mentioned pointers are for. To properly implement all of the features, we need a pointer to the data, this is the owning pointer (but not the unique ptr). It may be easier to see in code:
+
+	struct rocket_file_core {
+		uintptr_t 	data;
+		uintptr_t 	seek_offset;
+		long 		seek_value;
+		struct file_info {
+			long file_len;
+			//more info stuff here if needed
+		} info;
+	} ;
+
+	These should work well enough to implement all we want to. Now, continuing with Read -- read should copy size bytes into the provided buffer, unless seek_offset + size >= data + info.file_len. That is, we read up to size bytes, unless we run out of file to read. We return the actual number of bytes read.
+	This function in the interface should call into the provided RocketFile's internal Read function which actually does all this. Thus RocketFile can hide its internals from everything as it is effectively opaque within LibRocket. We will also need to update seek_offset and seek_value:
+		seek_offset += bytes_read; //This will not be a problem
+		seek_value += bytes_read;  // but this may overflow if we dont support 2^64 byte file sizes internally (in which case, even seek_offset may need to change to some other type to support that king of a length. Dont think we'll be implementing that...)
+
+	Seek is simple, although the math is a slight bit complicated due to the origin parameter. This is just like the C fseek interface -> SEEK_SET, SEEK_END, SEEK_CUR which seek from beginning, end and current respectively. The Seek function is still dead simple:
+	Seek(offset, origin) {
+		switch(origin) {
+			case SEEK_SET:
+				assert(offset <= info.file_len); //No going off the end
+				assert(offset > 0); //seeking off the front of the file?
+				seek_value = offset;
+				break;
+			case SEEK_END:
+				assert(offset < 0); //cant seek off the end, or shouldnt be able to. If LibRocket actually trips this assert, that's a definite bug
+				seek_value = info.file_len + offset;
+				break;
+			case SEEK_CUR:			
+				seek_value + offset;
+				//assert after, we save some time on the recalculation, and if the assert fails, we're frakked anyways
+				assert(seek_value <= info.file_len);  // going off the deep end
+				assert(seek_value >= 0);  // and somehow managing to go off the shallow end
+				break;
+			case DEFAULT:
+				assert(LIBROCKET_FRAKKED_THE_FRAK_UP); ///defined as false
+				break;
+		}
+	}
+
+	Tell is like...stupidly simple:
+	inline Tell() {
+		return seek_value;
+	}
+
+4. Implement render interface
+
+	Ah this one's fun. Check the DirectX9 sample, use to create dx11 version. The geometry compiled can go into a special per scene ui vb that gets passed to the renderer but then we also need to set up texture id's for that. Effectively LibRocket wants us to generate sprites for it, except it will store them and only release them at some later point. The fact that it may expect to release each geometry object independently, it may be better to seperate the buffers out. We're unlikely to run into any kind of resource limits with our ui usage. Again, see the DirectX9 sample.
